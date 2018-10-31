@@ -327,7 +327,8 @@ function take_yaamp_fee($v, $algo, $percent=-1)
 
 function yaamp_hashrate_constant($algo=null)
 {
-	return pow(2, 42);		// 0x400 00000000
+	return 4295032833000; // SC and HS diff are a bit different from BTC
+	//return pow(2, 42);		// 0x400 00000000
 }
 
 function yaamp_hashrate_step()
