@@ -74,8 +74,8 @@ then configure the keys file
 
 then configure the web app
 ---
-	sudo mv /var/web/serverconfig.sample.php /var/web/serverconfig.php
-	sudo vim /var/web/serverconfig.php
+	sudo mv /var/www/web/serverconfig.sample.php /var/www/web/serverconfig.php
+	sudo vim /var/www/web/serverconfig.php
 	... need to change YAAMP_DBNAME, YAAMP_DBUSER, and YAAMP_DBPASSWORD
 	... also set YAAMP_RENTAL to false, YAAMP_SITE_NAME to preferred name, and configure YAAMP_ADMIN_EMAIL and YAAMP_ADMIN_IP
 
@@ -83,6 +83,10 @@ make sure everything works
 ---
 	cd bin
 	./yiimp checkup
+
+give webserver ownership of certain folders
+---
+	chown -R www-data /var/www/web/assets /var/www/web/framework /var/www/web/log
 
 run scripts in screen
 ---
@@ -92,7 +96,7 @@ run scripts in screen
 	... switch screen ...
 	./loop2.sh
 	... switch screen ...
-	./block.sh
+	./blocks.sh
 
 Now your webserver should be running! Check it in your web browser
 
@@ -112,6 +116,7 @@ add the following to your ~/.bashrc
 build Sia stratum server
 ---
 	git clone https://github.com/ToastPool/Sia.git
+	mkdir -p  ~/.go/src/github.com/NebulousLabs
 	mv ./Sia ~/.go/src/github.com/NebulousLabs/Sia
 	cd ~/.go/src/github.com/NebulousLabs/Sia
 	make dependencies
