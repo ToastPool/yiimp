@@ -92,7 +92,7 @@ run scripts in screen
 	... switch screen ...
 	./loop2.sh
 	... switch screen ...
-	./block.sh
+	./blocks.sh
 
 Now your webserver should be running! Check it in your web browser
 
