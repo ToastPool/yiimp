@@ -84,6 +84,10 @@ make sure everything works
 	cd bin
 	./yiimp checkup
 
+give webserver ownership of certain folders
+---
+        chown -R www-data /var/www/web/assets /var/www/web/framework /var/www/web/log
+
 run scripts in screen
 ---
 	cd /var/www/web
